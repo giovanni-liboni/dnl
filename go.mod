@@ -1,4 +1,4 @@
-module dwl
+module dnl
 
 go 1.19
 

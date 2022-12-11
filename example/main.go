@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dwl"
+	"dnl"
 	"fmt"
 	"log"
 )
@@ -56,7 +56,7 @@ func main() {
 	select {}
 }
 
-func listenToChannel(channels dnl.DWL, id string) {
+func listenToChannel(channels dnl.DNL, id string) {
 	for {
 		select {
 		case msg := <-channels.GetChannel(id):
