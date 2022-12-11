@@ -17,14 +17,9 @@ func main() {
 	provider2 := dnl.NewProviderRedis("localhost:6379")
 	ch2 := dnl.NewWithProvider(provider2)
 
-	// Create a new channel
-	provider3 := dnl.NewProviderRedis("localhost:6379")
-	ch3 := dnl.NewWithProvider(provider3)
-
 	// Add a channel to the DWL
 	ch1.AddChannel("channel1")
 	ch2.AddChannel("channel2")
-	ch3.AddChannel("channel3")
 
 	// Listen to the channel
 	go listenToChannel(ch1, "channel1")
