@@ -6,7 +6,9 @@ import (
 )
 
 type Provider interface {
+	// Send sends a message to the target id.
 	Send(id string, msg string) error
+	// SetOnMessageFunc sets the function to be called when a message is received.
 	SetOnMessageFunc(onMessageFunc func(string, string) error)
 }
 

@@ -1,13 +1,11 @@
 # Distributed Notification Library
 
-DNL is a library for sending notifications to multiple instances of the same service or beween different services. It is 
-designed to be used in a distributed environment, where the services are running on different machines or pods (k8s).
-The main goal of this library is to provide a simple and easy to use interface.
+DNL is a library designed for sending notifications to multiple instances of the same service or between different services. It's particularly useful in a distributed environment where services run on separate machines or pods (k8s). The primary aim of this library is to offer a simple and easy-to-use interface.
 
 ## Installation
 
 ```bash
-go get github.com/alexandrevicenzi/dnl
+go get github.com/giovanni-liboni/dnl
 ```
 
 
@@ -28,7 +26,7 @@ import (
 	"log"
 )
 
-// Simple example of how to use the DWL
+// Simple example of how to use the DNL
 
 func main() {
 	// Create a new DWL
@@ -39,7 +37,7 @@ func main() {
 	provider2 := dnl.NewProviderRedis("localhost:6379")
 	ch2 := dnl.NewWithProvider(provider2)
 
-	// Add a channel to the DWL
+	// Add a channel to the DNL
 	ch1.AddChannel("channel1")
 	ch2.AddChannel("channel2")
 
@@ -82,3 +80,18 @@ func listenToChannel(channels dnl.DNL, id string) {
 	}
 }
 ```
+
+Output:
+```
+Received message for channel channel1 : Hello World!
+Received message for channel channel1 : Hello World from another channel!
+Received message for channel channel1 : Hello World from another goroutine passing from Redis!
+```
+
+## License
+
+The project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more details.
+
+## Contributing
+
+Feel free to contribute to this project. Any help is appreciated.
